@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Desafio QConcursos</string>
+
+    <string name="welcome">Welcome to Quotes!</string>
+    <string name="choose_quote">Choose a quote to see details.</string>
+    <string name="see_more">See more details</string>
+</resources>
