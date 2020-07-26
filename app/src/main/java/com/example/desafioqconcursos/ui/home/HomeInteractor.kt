@@ -14,12 +14,12 @@ class HomeInteractor(val output: HomeActivity): HomeContract.Interactor {
 
     private val api = Service.getRetrofitInstance().create(AppAPI::class.java)
 
-    override fun getQuotes() {
-        val call: Call<List<QuotesResponse>> = api.getQuotes()
+    override fun getQuotes(page: Int) {
+        val call: Call<List<QuotesResponse>> = api.getQuotes(page)
         call.enqueue(object : Callback<List<QuotesResponse>> {
             @RequiresApi(Build.VERSION_CODES.M)
             override fun onFailure(call: Call<List<QuotesResponse>>, t: Throwable) {
-                output.onError(t.localizedMessage)
+                output.onError("Something went wrong! Check your connection.")
                 Log.d("error", t.localizedMessage)
             }
 

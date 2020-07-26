@@ -1,13 +1,15 @@
 package com.example.desafioqconcursos.network.bean
 
-class QuotesResponse (
-    val _id: String?,
-    val sr: String?,
-    val en: String?,
-    val author: String?,
-    val source: Any?,
-    val numberOfVoter: Int?,
-    val rating: Double?,
-    val addedBy: String?,
-    val id: String?
-)
+import java.io.Serializable
+
+class QuotesResponse : Serializable {
+    val _id: String? = ""
+    val sr: String? = ""
+    val en: String? = ""
+    val author: String? = ""
+    val source: Any? = ""
+    val numberOfVoter: Int? = 0
+    val rating: Double? = 0.0
+    val addedBy: String? = ""
+    val id: String? = ""
+}
