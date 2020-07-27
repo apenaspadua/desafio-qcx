@@ -8,6 +8,7 @@ import android.os.Message
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.desafioqconcursos.R
 import com.example.desafioqconcursos.network.bean.QuotesResponse
 import com.example.desafioqconcursos.ui.details.DetailsActivity
@@ -53,12 +54,12 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun getListQuotes(page: Int){
-        progressBar.visibility = View.VISIBLE
+        loading.visibility = View.VISIBLE
         interactor.getQuotes(page)
     }
 
     fun createList(list: List<QuotesResponse>) {
-        progressBar.visibility = View.GONE
+        loading.visibility = View.GONE
         val recyclerView = recycler_quotes
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -67,7 +68,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun onError(message: String) {
-        progressBar.visibility = View.GONE
+        loading.visibility = View.GONE
         Snackbar.make(
             findViewById(android.R.id.content),
             message,
@@ -84,5 +85,9 @@ class HomeActivity : AppCompatActivity() {
     private fun initializeComponents() {
         Utils.setPushDownAnimation(prev)
         Utils.setPushDownAnimation(next)
+
+        Glide.with(this)
+            .load(R.drawable.loading)
+            .into(loading)
     }
 }
