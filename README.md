@@ -4,7 +4,7 @@ Projeto realizado para a avaliação do time da QConcursos
 # Configuração - Android
 O app foi desenvolvido em Kotlin em seu sistema nativo, para execução do mesmo via código basta realizar o clone do projeto, abrir com o Android Studio e clicar em "Run"
 
-# Bonus Implentado
+# Bonus Implementado
 - Paginação
 - SplashScreen
 - Mensagens para tratamento de erros
